@@ -32,27 +32,24 @@ python manage.py migrate
 ```
 Load data from sql file to Postgresql Database:
 ```bash
-psql -U user -h 127.0.0.1 -d data_base
+psql -U user -h 127.0.0.1 -d data_base < your_sql_file.sql
 
 ```
 
 
 ## Running the Application
 
-### 1. Start the Celery worker:
-```bash
-celery -A chaotixAI worker -l info
-```
-
-### 2. Start the Django development server:
+Start the Django development server:
 ```bash
 python3 manage.py runserver
 ```
 
 ## API Endpoints
-- open browser and go to http://127.0.0.1:8000/
-- send a POST request body
-```
-    {
-      "prompts": ["image1 description", "image2 description", "image3 description"]
-    }
+- GET http://127.0.0.1:8000/banks >> list of all banks
+- POST http://127.0.0.1:8000/branch >> details of a branch
+    - request body
+    ```
+        {
+          "ifsc": "IFSC CODE"
+        }
+    ```
