@@ -21,7 +21,7 @@ pip install -r requirements.txt
 ```
 
 ### 3. Set environment variables: Add a .env file and add the following
-- DB_ID: Your database access ID
+- DB_ID: Your database userid
 - DB_PASS: Your database password
 
 ### 4. Django Setup
