@@ -16,15 +16,12 @@ class BankList (generics.ListAPIView):
 
 @api_view(['POST'])
 def branch_details(request):
-
-    ifsc = request.data.get("ifsc")
+    ifsc = request.data.get("ifsc")    
     
     try:
         branch=Branches.objects.get(ifsc=ifsc)
         serializer = BranchSerializer(branch, many=False)
-        return Response(serializer.data)
-        
-    
+        return Response(serializer.data)         
     except Exception:
         return Response({"error": "Invalid IFSC code"}, status=400)
     
