@@ -1,5 +1,5 @@
 # Project Overview
-This Django project has two API endpoints that provide information about Banks and its branches.
+This Django project has two REST API endpoints that provide information about Banks and its branches.
 
 
 
